@@ -19,6 +19,9 @@ import java.io.IOException;
 import javax.swing.JLabel;
 import java.awt.Label;
 import java.awt.Button;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.JSlider;
 
 public class CadastroPizza {
 
@@ -97,10 +100,24 @@ public class CadastroPizza {
 		textFieldDescricao.setBounds(153, 174, 417, 150);
 		frame.getContentPane().add(textFieldDescricao);
 		
-		JFormattedTextField formattedTextField = new JFormattedTextField();
-		formattedTextField.setText("");
-		formattedTextField.setToolTipText("");
-		formattedTextField.setBounds(153, 132, 204, 31);
-		frame.getContentPane().add(formattedTextField);
-	}
+		JSpinner spinner = new JSpinner();
+		spinner.setModel(new SpinnerNumberModel(Double.valueOf(0), null, null, Double.valueOf(1)));
+		spinner.setBounds(153, 132, 90, 31);
+		frame.getContentPane().add(spinner);
+		
+		JButton btnRegistrar = new JButton("Registrar");
+		btnRegistrar.setBounds(153, 359, 108, 31);
+		frame.getContentPane().add(btnRegistrar);
+		
+		JButton btnNewButton_1 = new JButton("Registrar e Sair");
+		btnNewButton_1.setBounds(291, 359, 144, 31);
+		frame.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Cancelar");
+		btnNewButton_2.setBounds(462, 359, 108, 31);
+		frame.getContentPane().add(btnNewButton_2);
+		
+		
+		
+	}	
 }
