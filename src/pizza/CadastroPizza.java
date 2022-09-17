@@ -22,27 +22,39 @@ import java.awt.Button;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JSlider;
+import main.Index;
 
 public class CadastroPizza {
 
 	private JFrame frame;
 	private JTextField textFieldNome;
 	private JTextField textFieldDescricao;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
+	
+	
+	
+	public JFrame getFramePizza() {
+		return frame;
+	}
+	
+	public static void lauchAppPizza() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					CadastroPizza window = new CadastroPizza();
 					window.frame.setVisible(true);
+					window.frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
+	}
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		lauchAppPizza();
 	}
 
 	/**
@@ -59,7 +71,7 @@ public class CadastroPizza {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
 		frame.setBounds(100, 100, 718, 440);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JTextPane txtpnTitulo = new JTextPane();
@@ -106,14 +118,32 @@ public class CadastroPizza {
 		frame.getContentPane().add(spinner);
 		
 		JButton btnRegistrar = new JButton("Registrar");
+		btnRegistrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			System.out.println(textFieldNome.getText());
+			}
+		});
 		btnRegistrar.setBounds(153, 359, 108, 31);
 		frame.getContentPane().add(btnRegistrar);
 		
 		JButton btnNewButton_1 = new JButton("Registrar e Sair");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			System.out.println(textFieldNome.getText());
+			frame.dispose();
+			}
+		});
 		btnNewButton_1.setBounds(291, 359, 144, 31);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Cancelar");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				Index windowIndex = new Index();
+				windowIndex.lauchAppIndex();
+			}
+		});
 		btnNewButton_2.setBounds(462, 359, 108, 31);
 		frame.getContentPane().add(btnNewButton_2);
 		
