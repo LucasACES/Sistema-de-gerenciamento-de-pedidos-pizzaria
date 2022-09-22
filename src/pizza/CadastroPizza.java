@@ -36,7 +36,7 @@ public class CadastroPizza {
 		return frame;
 	}
 	
-	public static void lauchAppPizza() {
+	public static void launchAppPizza() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -54,7 +54,7 @@ public class CadastroPizza {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		lauchAppPizza();
+		launchAppPizza();
 	}
 
 	/**
@@ -121,6 +121,9 @@ public class CadastroPizza {
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			System.out.println(textFieldNome.getText());
+			textFieldNome.setText("");
+			textFieldDescricao.setText("");
+			spinner.setValue(0);
 			}
 		});
 		btnRegistrar.setBounds(153, 359, 108, 31);
@@ -131,6 +134,8 @@ public class CadastroPizza {
 			public void actionPerformed(ActionEvent e) {
 			System.out.println(textFieldNome.getText());
 			frame.dispose();
+			Index windowIndex = new Index();
+			windowIndex.launchAppIndex();
 			}
 		});
 		btnNewButton_1.setBounds(291, 359, 144, 31);
@@ -141,7 +146,7 @@ public class CadastroPizza {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
 				Index windowIndex = new Index();
-				windowIndex.lauchAppIndex();
+				windowIndex.launchAppIndex();
 			}
 		});
 		btnNewButton_2.setBounds(462, 359, 108, 31);
