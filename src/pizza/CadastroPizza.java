@@ -121,6 +121,8 @@ public class CadastroPizza {
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			System.out.println(textFieldNome.getText());
+			System.out.println(textFieldDescricao.getText());
+			System.out.println(spinner.getValue());
 			textFieldNome.setText("");
 			textFieldDescricao.setText("");
 			spinner.setValue(0);
@@ -133,6 +135,8 @@ public class CadastroPizza {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			System.out.println(textFieldNome.getText());
+			System.out.println(textFieldDescricao.getText());
+			System.out.println(spinner.getValue());
 			frame.dispose();
 			Index windowIndex = new Index();
 			windowIndex.launchAppIndex();
