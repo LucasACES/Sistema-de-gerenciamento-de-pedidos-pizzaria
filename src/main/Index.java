@@ -12,9 +12,13 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JMenu;
 import javax.swing.SwingConstants;
+
+import help.License;
+import pizza.CadastroPizza;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import pizza.CadastroPizza;
+
 
 public class Index {
 
@@ -23,7 +27,7 @@ public class Index {
 	public JFrame getFrameIndex() {
 		return frameIndex;
 	}
-	public static void lauchAppIndex() {
+	public static void launchAppIndex() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -40,7 +44,7 @@ public class Index {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		lauchAppIndex();
+		launchAppIndex();
 	}
 
 	/**
@@ -70,7 +74,7 @@ public class Index {
 			public void actionPerformed(ActionEvent e) {
 				
 				CadastroPizza runPizza = new CadastroPizza();
-				runPizza.lauchAppPizza();
+				runPizza.launchAppPizza();
 				
 				frameIndex.setVisible(false);
 				
@@ -101,25 +105,13 @@ public class Index {
 		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Help content");
 		mnNewMenu_1.add(mntmNewMenuItem_6);
 		
-		JMenuItem mntmNewMenuItem_7 = new JMenuItem("License");
-		mnNewMenu_1.add(mntmNewMenuItem_7);
-	}
-
-	private static void addPopup(Component component, final JPopupMenu popup) {
-		component.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-			public void mouseReleased(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-			private void showMenu(MouseEvent e) {
-				popup.show(e.getComponent(), e.getX(), e.getY());
+		JMenuItem itemLicense = new JMenuItem("License");
+		itemLicense.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				License runLicense = new License();
+				runLicense.launchAppLicense();
 			}
 		});
+		mnNewMenu_1.add(itemLicense);
 	}
 }
