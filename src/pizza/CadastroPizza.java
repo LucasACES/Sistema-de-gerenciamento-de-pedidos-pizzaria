@@ -4,24 +4,18 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTextPane;
-import java.awt.BorderLayout;
-import javax.swing.DropMode;
-import java.awt.GridLayout;
+
 import java.awt.Font;
 import java.awt.Color;
-import javax.swing.JFormattedTextField;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.io.FileWriter;
-import java.io.IOException;
-import javax.swing.JLabel;
-import java.awt.Label;
-import java.awt.Button;
+
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
-import javax.swing.JSlider;
+
 import main.Index;
 
 public class CadastroPizza {
@@ -138,8 +132,7 @@ public class CadastroPizza {
 			System.out.println(textFieldDescricao.getText());
 			System.out.println(spinner.getValue());
 			frame.dispose();
-			Index windowIndex = new Index();
-			windowIndex.launchAppIndex();
+			Index.launchAppIndex();
 			}
 		});
 		btnNewButton_1.setBounds(291, 359, 144, 31);
@@ -149,8 +142,7 @@ public class CadastroPizza {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				Index windowIndex = new Index();
-				windowIndex.launchAppIndex();
+				Index.launchAppIndex();
 			}
 		});
 		btnNewButton_2.setBounds(462, 359, 108, 31);
