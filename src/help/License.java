@@ -3,7 +3,6 @@ package help;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import java.awt.GridLayout;
 import javax.swing.JTextPane;
 import java.awt.Color;
 import java.awt.Font;
