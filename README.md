@@ -1,4 +1,4 @@
-<h1> Sistema-de-gerenciamento-de-pedidos-pizzaria </h1>
+<h1> Sistema de gerenciamento para pizzaria </h1>
 
 ![Lincese](https://img.shields.io/github/license/LucasACES/Sistema-de-gerenciamento-de-pedidos-pizzaria?style=flat-square)
 ![Status](https://img.shields.io/badge/status-Building-yellow?style=flat-square)
