@@ -6,13 +6,9 @@ import javax.swing.JFrame;
 import java.awt.GridLayout;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
-import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.JMenu;
-import javax.swing.SwingConstants;
 
+import help.Help;
 import help.License;
 import pizza.CadastroPizza;
 
@@ -69,20 +65,14 @@ public class Index {
 		JMenu mnNewMenu = new JMenu("Register");
 		menuBar.add(mnNewMenu);
 		
-		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Pizza");
-		mntmNewMenuItem_3.addActionListener(new ActionListener() {
+		JMenuItem itemRegisterPizza = new JMenuItem("Pizza");
+		itemRegisterPizza.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				CadastroPizza runPizza = new CadastroPizza();
-				runPizza.launchAppPizza();
-				
+				CadastroPizza.launchAppPizza();
 				frameIndex.setVisible(false);
-				
-				
-				
 			}
 		});
-		mnNewMenu.add(mntmNewMenuItem_3);
+		mnNewMenu.add(itemRegisterPizza);
 		
 		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Drink");
 		mnNewMenu.add(mntmNewMenuItem_4);
@@ -102,14 +92,18 @@ public class Index {
 		JMenuItem mntmNewMenuItem = new JMenuItem("About");
 		mnNewMenu_1.add(mntmNewMenuItem);
 		
-		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Help content");
-		mnNewMenu_1.add(mntmNewMenuItem_6);
+		JMenuItem itemHelp = new JMenuItem("Help content");
+		itemHelp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Help.launchAppHelp();
+			}
+		});
+		mnNewMenu_1.add(itemHelp);
 		
 		JMenuItem itemLicense = new JMenuItem("License");
 		itemLicense.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				License runLicense = new License();
-				runLicense.launchAppLicense();
+				License.launchAppLicense();
 			}
 		});
 		mnNewMenu_1.add(itemLicense);
